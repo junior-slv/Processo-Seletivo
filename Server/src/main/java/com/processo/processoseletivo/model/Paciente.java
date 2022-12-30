@@ -12,36 +12,36 @@ public class Paciente implements Serializable {
 
     private Long id;
     private String nome;
-    private String sexo;
+
     private String rua;
-    private int numero;
+    private String numero;
     private String bairro;
-    private String estado;
     private String cidade;
+    private String estado;
+
     private String email;
-    private String celular;
-    private int datanascimento;
+    private String sexo;
+    private String telefone;
+    private String cpf;
     @Column(nullable = false, updatable = false)
     private String pacienteCodigo;
 
-    private String cpf;
+
 
     public Paciente(){}
 
-    public Paciente (Long id, String nome, String sexo, String rua, int numero, String bairro, String estado,
-                     String cidade, String cpf, String celular, int datanascimento, String email, String pacienteCodigo){
+    public Paciente (Long id, String nome, String rua, String numero, String bairro, String cidade, String estado, String sexo, String cpf, String telefone, String email, String pacienteCodigo){
         this.id = id;
         this.nome = nome;
-        this.sexo = sexo;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
-        this.estado = estado;
         this.cidade = cidade;
+        this.estado = estado;
+        this.sexo = sexo;
         this.cpf = cpf;
-        this.celular = celular;
-        this.datanascimento = datanascimento;
         this.email = email;
+        this.telefone = telefone;
         this.pacienteCodigo = pacienteCodigo;
 
     }
@@ -54,33 +54,33 @@ public class Paciente implements Serializable {
     public String getNome(){
         return nome;
     }
-    public String getSexo(){
-        return sexo;
-    }
+
     public String getRua(){
-        return nome;
+        return rua;
     }
-    public int getNumero(){
+    public String getNumero(){
         return numero;
     }
     public String getBairro(){
         return bairro;
     }
-    public String getEstado(){
-        return estado;
-    }
     public String getCidade(){
         return cidade;
     }
+    public String getEstado(){
+        return estado;
+    }
+    public String getSexo(){
+        return sexo;
+    }
+    public String getTelefone(){
+        return telefone;
+    }
+
     public String getCpf(){
         return cpf;
     }
-    public String getCelular(){
-        return celular;
-    }
-    public int getDatanascimento(){
-        return datanascimento;
-    }
+
     public String getEmail(){
         return email;
     }
@@ -95,32 +95,29 @@ public class Paciente implements Serializable {
     public void setNome(String nome){
         this.nome = nome;
     }
-    public void setSexo(String sexo){
-        this.sexo = sexo;
-    }
     public void setRua(String rua){
         this.rua = rua;
     }
-    public void setNumero(int numero){
+    public void setNumero(String numero){
         this.numero = numero;
     }
-    public void setBairror(String bairro){
+    public void setBairro(String bairro){
         this.bairro = bairro;
-    }
-    public void setEstado(String estado){
-        this.estado = estado;
     }
     public void setCidade(String cidade){
         this.cidade = cidade;
     }
+    public void setEstado(String estado){
+        this.estado = estado;
+    }
+    public void setSexo(String sexo){
+        this.sexo = sexo;
+    }
     public void setCpf(String cpf){
         this.cpf = cpf;
     }
-    public void setCelular(String celular){
-        this.celular = celular;
-    }
-    public void setDatanascimento(int datanascimento){
-        this.datanascimento = datanascimento;
+    public void setTelefone(String telefone){
+        this.telefone = telefone;
     }
     public void setEmail(String email){
         this.email = email;
@@ -135,10 +132,13 @@ public class Paciente implements Serializable {
                 ", Nome="+ nome + '\'' +
                 ", CPF=' " + cpf + '\'' +
                 ", Email=' " + email + '\''+
-                ", Telefone=' " + celular + '\'' +
+                ", Rua="+ rua + '\'' +
+                ", Numero="+ numero + '\'' +
+                ", Bairro="+ bairro + '\'' +
+                ", Cidade="+ cidade + '\'' +
+                ", Estado="+ estado + '\'' +
+                ", Telefone=' " + telefone + '\'' +
                 ", Sexo=' " + sexo + '\'' +
-                ", Data de nascimento=' " + datanascimento + '\'' +
-                ", Endereco=' " +rua+", "+numero+" - "+bairro+", "+cidade+" - "+estado + '\''+
                 '}';
 
 
